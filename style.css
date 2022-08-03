@@ -1,0 +1,175 @@
+h1 {
+    text-transform: uppercase;
+    text-transform: lowercase;
+    letter-spacing: 10px;
+    font-family: 'Square Peg', cursive;
+    font-size: 2rem;
+    color: darkblue;
+    text-shadow: 5px 0 0 darkcyan;
+    text-align: center
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+@font-face {
+    font-family: "font-1";
+    src: url(assets/NotoSansTamil-Medium.ttf);
+}
+
+body{
+    font-family: "font-1";
+    background: url(assets/bg.jpg) no-repeat fixed center/cover;
+    height: 200vh;
+    
+}
+
+h1::first-letter {
+    color: red;
+}
+
+main{
+    background: rgba(140, 115, 17, 0.413);
+    width: 85%;
+    min-height: 350px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.575);
+}
+
+/*hébergeur d'image gratuite 
+    -pexel
+    -
+
+*/
+*{
+    border: 1px solid red;
+}
+
+.position,
+.grid{
+    padding: 20px;
+    border: 1px solid skyblue;
+    margin-top: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#circle{
+    height: 60px;
+    width: 60px;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    z-index: 1;
+}
+
+#rectangle {
+    height: 15px;
+    width: 25%;
+    background: slateblue;
+    padding: 10px;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+li{
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: turquoise;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'i1 i2'
+    'ta ta'
+    'btn btn';
+}
+input,
+textarea{
+    margin: 5px;
+    height: 45px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: serif;
+}
+
+#firstName {
+    grid-area: i1;
+}
+#surname {
+    grid-area: i2;
+}
+
+textarea{
+    grid-area: ta;
+    resize: none;
+}
+
+input[type="submit"] {
+    grid-area: btn;
+}
+
+input[type="submit"]:hover {
+    background: lightcoral;
+}
+
+/* ____________________________________________________________ */
+
+@media screen and (max-width: 789px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+ 
+    }
+    .img{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        'i1'
+        'i2'
+        'ta'
+        'btn';
+    }
+}
